@@ -1,0 +1,42 @@
+/* Shy  */
+
+@import 'https://fonts.googleapis.com/css?family=Press+Start+2P';
+
+#myscore{
+    display:flex;
+}
+  
+
+body {
+    margin: 10px;
+    padding: 10px;
+    font-family: 'Press Start 2P', sans-serif;
+    color: red;
+    display: flex;
+    justify-content: space-around;
+    
+}
+
+.button {
+    cursor: pointer;
+    position: absolute;
+	top: 80%;
+	left: 45%;
+} 
+html { 
+    background: url(/home/shy/coding/Hackathon/pictures/Backgrounds/BG4_large.jpg) no-repeat center center fixed; 
+    opacity: .8;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+
+
+#next{
+    cursor: pointer;
+    position: absolute;
+	top: 80%;
+	left: 55%;
+}
+/* SHY */
