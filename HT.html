@@ -4,15 +4,19 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>HT</title>
 </head>
 <body>
-    <h1> romny test</h1>
     <header class="head">
         <span id="score"></span>
         <div id="hearts">
-
         </div>
+        <!-- HP BAR -->
+        <progress id="health" value="3" max="3"></progress> 
+        <button id="addHp">+</button> <button id="loseHp">-</button>
+    <!--   HP BAr: This is to display lives in numerical value if we want, div with JS function va() for value
+    <div id="val"></div> -->
     </header>
     <div class="main">
         <button class="start">Start/Next question</button>
