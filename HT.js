@@ -1,3 +1,24 @@
+//rony: HP bar
+health = document.getElementById('health'); 
+// var for loosing health
+const loseHp = document.getElementById('loseHp');
+// extra: var if we want to give and extra life that adds health
+// const addHp = document.getElementById('addHp'); 
+
+// This is the event listener, it is setup to link event from html by clicking button - 
+// we switch the eventL once we have it to change with wrong question
+loseHp.addEventListener('click', () => { health.value -= 1; va()});
+// if we use extra life:
+// addHp.addEventListener('click', () => { health.value += 1; va()});
+
+// extra: function if we want to display numerical value of amount of lifes
+// function va() {
+// document.getElementById('val').innerHTML = health.value;
+// }
+// va()
+//-----------------
+
+// Raz: questions/answers/quiz
 let audio_place = document.getElementsByClassName("audioFile")[0];
 let question_place = document.getElementsByClassName("question")[0];
 let answers_place = document.getElementsByClassName("option");
