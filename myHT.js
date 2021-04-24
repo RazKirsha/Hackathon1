@@ -1,12 +1,11 @@
-var modal = document.getElementById("myModal");
-var modal_body = document.getElementsByClassName("modal-body")[0];
+let modal = document.getElementById("myModal");
+let modal_body = document.getElementsByClassName("modal-body")[0];
+let span = document.getElementsByClassName("close")[0];
 let start_game = document.getElementsByClassName("starttheGame")[0];
-var span = document.getElementsByClassName("close")[0];
 let audio_place = document.getElementsByClassName("audioFile")[0];
 let question_place = document.getElementsByClassName("question")[0];
 let answers_place = document.getElementsByClassName("option");
 let main = document.getElementsByClassName("main")[0];
-let next = document.getElementsByClassName("start")[0];
 let start = document.getElementsByClassName("start")[0];
 let rightWrong = document.getElementsByClassName("rightWrong")[0];
 let hint_button = document.getElementById("hinter");
@@ -15,13 +14,12 @@ let giveHint = document.getElementsByClassName("giveHint")[0];
 let endWindow = document.getElementsByClassName("endResult")[0];
 let score_place = document.getElementById("score");
 let health = document.getElementById('health'); 
-const timeLeftDisplay = document.querySelector('.timer');
-let timeLeft;
+let timeLeftDisplay = document.querySelector('.timer');
+let timeLeft = 60;
 let round = 0;
 let score = 0;
 let index = 0;
-let correct;
-let hints_taken = 0;
+
 main.style.opacity = 0;
 
 let questions = [
@@ -173,7 +171,6 @@ hint_button.addEventListener('click',function(){
     hintSpace.innerHTML = questions[index].hint;
     hintSpace.classList.toggle("show");
     score -=30;
-    // hints_taken +=1;
     setTimeout(function(){
         hintSpace.innerHTML='';
     },5000);
@@ -195,7 +192,6 @@ function gameOver(s){
 }
 
 //setting countdown
-timeLeft = 60;     
 function countDown() {
     setInterval(function () {
         if (timeLeft <= 0) {
