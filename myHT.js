@@ -32,7 +32,7 @@ let questions = [
         option3: "first",
         option4: "result",
         answer: "this",
-        hint: "starts with t",
+        hint: "starts with t"
     },
     {
         sound: "Tiger.mp3",
@@ -89,7 +89,7 @@ let questions = [
         hint: "starts with t"
     }
 ];
-console.log(questions);
+
 let keys = Object.keys(questions[0]);
 
 function appendAudio(link){
@@ -139,26 +139,14 @@ Array.from(answers_place).forEach((ap) => {
         } else {
             gameOver(score+100);
         }
-                })
-            }); 
+    })
+}); 
 
 function nextquestion(){   
-countDown();
-let qst = questions[index];
-//getting index forward
-if(index < questions.length-1){
-    index +=1; 
-    // Get the button that opens the modal
-    // var btn = document.getElementById("myBtn");
-    // Get the <span> element that closes the modal
-    // When the user clicks the button, open the modal 
-    // btn.onclick = function () {
-        // }
-        // When the user clicks on <span> (x), close the modal
-        // When the user clicks anywhere outside of the modal, close it
-    } else if(index == questions.length-1){
-        // giveHint.removeChild(hint_button);
-        console.log("LastQuestion");
+    let qst = questions[index];
+    //getting index forward
+    if(index < questions.length-1){
+        index +=1; 
     }
     //appendig audio
     appendAudio(qst.sound);
@@ -173,10 +161,9 @@ if(index < questions.length-1){
                 
                 
 // Remove Start button
-// start.style.opacity = 1;
 start.addEventListener('click',function(){
     start_game.removeChild(start_game.children[0]);
-    // countDown();
+    countDown();
     main.style.opacity = 1;
     nextquestion();
 })
@@ -193,6 +180,7 @@ hint_button.addEventListener('click',function(){
 })
                 
 function gameOver(s){
+    //pushing the end popup window
     modal.style.display = "block";
     span.onclick = function () {
         modal.style.display = "none";
@@ -205,7 +193,8 @@ function gameOver(s){
     }
     main.style.opacity = 0;
 }
-                
+
+//setting countdown
 timeLeft = 60;     
 function countDown() {
     setInterval(function () {
@@ -214,8 +203,6 @@ function countDown() {
             gameOver(score);
         }
         timeLeftDisplay.innerHTML = "TIME: " + timeLeft;
-        timeLeft -= 1;
-        // console.log(Math.floor(timeLeft));
-        
-    }, 1500);
+        timeLeft -= 1;        
+    }, 1100);
 }
