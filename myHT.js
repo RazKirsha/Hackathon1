@@ -24,67 +24,49 @@ main.style.opacity = 0;
 
 let questions = [
     {
-        sound: "Elephant.mp3",
-        option1: "This",
-        option2: "is",
-        option3: "first",
-        option4: "result",
-        answer: "this",
-        hint: "starts with t"
+        sound: "Q1.mp3",
+        option1: "Scarface",
+        option2: "Say Hello",
+        option3: "Bad Freind",
+        option4: "Pretty Little Liars",
+        answer: "Scarface",
+        hint: "I'm Tony Montana"
     },
     {
-        sound: "Tiger.mp3",
-        option1: "this",
-        option2: "is",
-        option3: "second",
-        option4: "result",
-        answer: "this",
-        hint: "last letter s"
+        sound: "Q2.mp3",
+        option1: "Bruno",
+        option2: "Made in the USA",
+        option3: "Borat",
+        option4: "The dictator",
+        answer: "Borat",
+        hint: "I like you. I like sex, VERY much!"
     },
     {
-        sound: "burekas.mp3",
-        option1: "this",
-        option2: "is",
-        option3: "third",
-        option4: "result",
-        answer: "this",
-        hint: "first one"
+        sound: "Q3.mp3",
+        option1: "Meet The Focker",
+        option2: "Hangover",
+        option3: "When Harry Met Sally",
+        option4: "Wedding Crashers",
+        answer: "Hangover",
+        hint: "So long, gay boys!"
     },
     {
-        sound: "claps.mp3",
-        option1: "this",
-        option2: "is",
-        option3: "fourth",
-        option4: "result",
-        answer: "this",
-        hint: "yellow"
-    },
+        sound: "Q4.mp3",
+        option1: "X-Men",
+        option2: "Harry Potter",
+        option3: "Titanic",
+        option4: "The Lord of the Rings",
+        answer: "The Lord of the Rings",
+        hint: "my precious"
+    },  
     {
-        sound: "burekas.mp3",
-        option1: "this",
-        option2: "is",
-        option3: "fifth",
-        option4: "result",
-        answer: "this",
-        hint: "under audio"
-    },
-    {
-        sound: "Elephant.mp3",
-        option1: "this",
-        option2: "is",
-        option3: "sixth",
-        option4: "result",
-        answer: "this",
-        hint: "starts with t"
-    },
-    {
-        sound: "Elephant.mp3",
-        option1: "this",
-        option2: "is",
-        option3: "seventh",
-        option4: "result",
-        answer: "this",
-        hint: "starts with t"
+        sound: "Q5.mp3",
+        option1: "James Bond",
+        option2: "Shrek",
+        option3: "Jurassic Park",
+        option4: "Pulp Fiction",
+        answer: "James Bond",
+        hint: "007"
     }
 ];
 
@@ -120,35 +102,35 @@ function popAnswer(){
 Array.from(answers_place).forEach((ap) => {
     //adding event listener to each option
     ap.addEventListener('click',function(){
-        if(round<questions.length+1){
-            if(ap.innerHTML == questions[index].answer){
+        if(round<questions.length){
+            //If correct
+            if(ap.innerHTML == questions[index-1].answer){
                 score += 100;
                 score_place.innerHTML = score;
                 rightWrong.innerHTML = "Correct";
                 popAnswer();
+            // if Wrong
             } else {
                 rightWrong.innerHTML = "False";
                 popAnswer();
                 health.value -= 1;
                 if(health.value == 0){
-                gameOver(score)
+                    gameOver(score);
+                }
             }
-        }
         } else {
-            gameOver(score+100);
+            gameOver(score+200);
         }
+        nextquestion();
     })
-}); 
+})
 
 function nextquestion(){   
     let qst = questions[index];
-    //getting index forward
     if(index < questions.length-1){
         index +=1; 
     }
-    //appendig audio
     appendAudio(qst.sound);
-    //placing options
     for (let i=0;i<4;i++){
         let obj_place = keys[i+1];
         answers_place[i].innerHTML = qst[obj_place];
@@ -165,17 +147,7 @@ start.addEventListener('click',function(){
     main.style.opacity = 1;
     nextquestion();
 })
-                
-//hint giver 
-hint_button.addEventListener('click',function(){
-    hintSpace.innerHTML = questions[index].hint;
-    hintSpace.classList.toggle("show");
-    score -=30;
-    setTimeout(function(){
-        hintSpace.innerHTML='';
-    },5000);
-})
-                
+                   
 function gameOver(s){
     //pushing the end popup window
     modal.style.display = "block";
@@ -201,4 +173,18 @@ function countDown() {
         timeLeftDisplay.innerHTML = "TIME: " + timeLeft;
         timeLeft -= 1;        
     }, 1100);
+}
+var popup = document.getElementById("myPopup");
+
+function myFunction() {
+    popup.classList.toggle("show");
+    if (popup.style.display == 'none'){
+        popup.style.display = 'block';
+        score -=30;
+    }
+    popup.innerHTML = questions[index-1].hint;
+    //this is timer for pop up to disapper
+    if (popup.style.display == 'block'){
+        popup.style.display = 'none';
+    } 
 }

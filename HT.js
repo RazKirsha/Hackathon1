@@ -63,15 +63,14 @@ function appendAudio(link){
     }
 }
 
-function getAnswer(){
-    Array.from(answers_place).forEach((ap) => {
+Array.from(answers_place).forEach((ap) => {
+    ap.addEventListener('click',function(e){
         console.log(ap.innerHTML);
-        ap.addEventListener('click',function(e){
-            console.log(e.target.innerHTML);
-            nextquestion();
-        })
-    });   
-}
+        console.log(questions[index].answer)
+        console.log(e.target.innerHTML);
+        nextquestion();
+    })
+});   
 
 let keys = Object.keys(questions[0])
 
