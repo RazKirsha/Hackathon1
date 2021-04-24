@@ -121,57 +121,36 @@ Array.from(answers_place).forEach((ap) => {
     //adding event listener to each option
     ap.addEventListener('click',function(){
         if(round<questions.length+1){
-            //if Right
             if(ap.innerHTML == questions[index].answer){
                 score += 100;
                 score_place.innerHTML = score;
                 rightWrong.innerHTML = "Correct";
                 popAnswer();
-                //if Wrong
             } else {
-                //life bar decrease SHOULD BE HERE
                 rightWrong.innerHTML = "False";
                 popAnswer();
                 health.value -= 1;
                 if(health.value == 0){
-                    gameOver(score)
-                }
+                gameOver(score)
             }
-            // console.log(round);
-            // console.log(index);
-            // console.log(questions.length-1);
-        } else {
-            // modal.style.display = "block";
-            // span.onclick = function () {
-                //     modal.style.display = "none";
-                // }
-                // modal_body.innerHTML = `You have got ${score+100} Point`;
-                // window.onclick = function (event) {
-                    //     if (event.target == modal) {
-                        //         modal.style.display = "none";
-                        //     }
-                        // }
-                        gameOver(score+100);
-                        // main.style.opacity = 0;
-                        // console.log(round);
-                        // console.log(index);
-            // console.log(questions.length-1);
         }
-    })
-}); 
+        } else {
+            gameOver(score+100);
+        }
+                })
+            }); 
 
 function nextquestion(){   
-    timeLeft = 20;     
-    // countDown()
-    let qst = questions[index];
-    //getting index forward
-    if(index < questions.length-1){
-        index +=1; 
-        // Get the button that opens the modal
-        // var btn = document.getElementById("myBtn");
-        // Get the <span> element that closes the modal
-        // When the user clicks the button, open the modal 
-        // btn.onclick = function () {
+countDown();
+let qst = questions[index];
+//getting index forward
+if(index < questions.length-1){
+    index +=1; 
+    // Get the button that opens the modal
+    // var btn = document.getElementById("myBtn");
+    // Get the <span> element that closes the modal
+    // When the user clicks the button, open the modal 
+    // btn.onclick = function () {
         // }
         // When the user clicks on <span> (x), close the modal
         // When the user clicks anywhere outside of the modal, close it
@@ -189,15 +168,15 @@ function nextquestion(){
     //counting rounds for appendAudio function
     round +=1;
 }
-
-
+                
+                
 // Remove Start button
 start.addEventListener('click',function(){
     main.removeChild(main.children[0]);
     // countDown();
     nextquestion();
 })
-
+                
 //hint giver 
 hint_button.addEventListener('click',function(){
     hintSpace.innerHTML = questions[index].hint;
@@ -208,7 +187,7 @@ hint_button.addEventListener('click',function(){
         hintSpace.innerHTML='';
     },5000);
 })
-
+                
 function gameOver(s){
     modal.style.display = "block";
     span.onclick = function () {
@@ -222,19 +201,17 @@ function gameOver(s){
     }
     main.style.opacity = 0;
 }
-
+                
+timeLeft = 60;     
 function countDown() {
     setInterval(function () {
         if (timeLeft <= 0) {
             clearInterval(timeLeft = 0);
+            gameOver(score);
         }
         timeLeftDisplay.innerHTML = "TIME: " + timeLeft;
         timeLeft -= 1;
-        console.log(timeLeft);
-        if (timeLeft == 0){
-            health.value -=1;
-            score -=30;
-            nextquestion()
-        }
-    }, 1000);
+        // console.log(Math.floor(timeLeft));
+        
+    }, 1500);
 }
