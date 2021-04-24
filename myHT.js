@@ -1,5 +1,6 @@
 var modal = document.getElementById("myModal");
 var modal_body = document.getElementsByClassName("modal-body")[0];
+let start_game = document.getElementsByClassName("starttheGame")[0];
 var span = document.getElementsByClassName("close")[0];
 let audio_place = document.getElementsByClassName("audioFile")[0];
 let question_place = document.getElementsByClassName("question")[0];
@@ -21,6 +22,7 @@ let score = 0;
 let index = 0;
 let correct;
 let hints_taken = 0;
+main.style.opacity = 0;
 
 let questions = [
     {
@@ -171,9 +173,11 @@ if(index < questions.length-1){
                 
                 
 // Remove Start button
+// start.style.opacity = 1;
 start.addEventListener('click',function(){
-    main.removeChild(main.children[0]);
+    start_game.removeChild(start_game.children[0]);
     // countDown();
+    main.style.opacity = 1;
     nextquestion();
 })
                 
