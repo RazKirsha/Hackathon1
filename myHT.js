@@ -21,7 +21,7 @@ let score = 0;
 let index = 0;
 
 main.style.opacity = 0;
-
+//setting questions,audios,options,answers,hints
 let questions = [
     {
         sound: "Q1.mp3",
@@ -130,7 +130,9 @@ function nextquestion(){
     if(index < questions.length-1){
         index +=1; 
     }
+    //adding the currect audio
     appendAudio(qst.sound);
+    //appending right answers
     for (let i=0;i<4;i++){
         let obj_place = keys[i+1];
         answers_place[i].innerHTML = qst[obj_place];
@@ -139,12 +141,13 @@ function nextquestion(){
     round +=1;
 }
                 
-                
 // Remove Start button
 start.addEventListener('click',function(){
     start_game.removeChild(start_game.children[0]);
+    // start countdown
     countDown();
     main.style.opacity = 1;
+    //setting new question
     nextquestion();
 })
                    
@@ -176,6 +179,7 @@ function countDown() {
 }
 var popup = document.getElementById("myPopup");
 
+//giving hint
 function myFunction() {
     popup.classList.toggle("show");
     if (popup.style.display == 'none'){

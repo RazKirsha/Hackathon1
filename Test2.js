@@ -1,11 +1,5 @@
-function countDown() {
-    timeLeft = 60;     
-    setInterval(function () {
-        if (timeLeft <= 0) {
-            clearInterval(timeLeft = 0);
-            gameOver(score);
-        }
-        timeLeftDisplay.innerHTML = "TIME: " + timeLeft;
-        timeLeft -= 1;
-    }, 1000);
-}
+let b = document.getElementsByTagName('button')[0];
+console.log(b);
+b.addEventListener('click',function(){
+    b.style.backgroundColor = 'red';
+})
