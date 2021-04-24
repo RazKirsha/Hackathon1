@@ -9,12 +9,59 @@
     <title>HT</title>
 </head>
 <body>
-    <header class="head">
+    <!-- <header class="head">
         <span id="score"></span>
         <div id="hearts">
 
         </div>
-    </header>
+    </header> -->
+    <!-- <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a id="myscore">SCORE:</a><span id="score">0</span>
+            <div class="" id="navbarText">
+                <span class="navbar-text">
+                    <progress id="health" value="3" max="3"></progress>
+                </span>
+                <div id="timer" class="timer">TIME: <span>60</span></div>
+            </div>
+        </div>
+    </nav> -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a id="myscore">SCORE : </a><span id="score"> 0</span>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <div id="timer" class="timer">TIME: <span>20</span></div>
+                </li>
+            </ul>
+          </div>
+        </div>
+        <span class="navbar-text">
+            <progress id="health" value="3" max="3"></progress>
+        </span>
+    </nav>
+    <div id="myModal" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="close">&times;</span>
+                <h2>How to play misFits Movie Trivia?</h2>
+            </div>
+            <div class="modal-body">
+                
+            </div>
+            <form action="">
+                <input type="submit" value="play again" />
+            </form>
+            <form action="Test2.html">
+                <input type="submit" value="about us" />
+            </form>
+            <div class="modal-footer">
+                <h3>The CodeFather</h3>
+            </div>
+        </div>
+    </div>
     <div class="main">
         <button class="start">Start/Next question</button>
         <span class="clock"></span>
@@ -24,16 +71,25 @@
         <div class="audioFile">
             
         </div>
-        <div class="options">
-            <button type="button" class="btn btn-warning option" onclick="getAnswer()" id="one"></button>
-            <button class="option" onclick="getAnswer()" id="two"></button>
-            <button class="option" onclick="getAnswer()" id="three"></button>
-            <button class="option" onclick="getAnswer()" id="four"></button>
+        <div class="options">           
+            <button type="button" class="btn btn-warning option" onclick="nextquestion()" id="one"></button>
+            <button class="option" onclick="nextquestion()" id="two"></button>
+            <button class="option" onclick="nextquestion()" id="three"></button>
+            <button class="option" onclick="nextquestion()" id="four"></button>
+        </div>
+        <div class="rightWrong">
+
+        </div>
+        <div class="giveHint">
+            <button class="giveHint" id="hinter">HINT</button>
+            <span id="hintSpace">
+
+            </span>
         </div>
     </div>
     <footer class="foot">
 
     </footer>
-    <script src="HT.js"></script>
+    <script src="myHT.js"></script>
 </body>
 </html>

@@ -1,0 +1,32 @@
+.all {
+    width: 200px;
+    height: 200px;
+    position: relative;
+    margin: 20px;
+}
+
+/* #hidden,
+.maindiv {
+    width: 100%;
+    height: 100%;            
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0.8;  for demo purpose 
+} */
+
+#hidden {
+    z-index: 9;
+    margin: 20px; /* for demo purpose  */
+    background-color: crimson;
+}
+
+.maindiv {
+    width: 100%;
+    height: 100%;            
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0.5;  /* for demo purpose  */
+    
+}
