@@ -27,7 +27,7 @@ let questions = [
         sound: "Q1.mp3",
         option1: "Scarface",
         option2: "Say Hello",
-        option3: "Bad Freind",
+        option3: "Bad Friend",
         option4: "Pretty Little Liars",
         answer: "Scarface",
         hint: "I'm Tony Montana"
