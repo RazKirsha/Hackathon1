@@ -1,3 +1,57 @@
+@import 'https://fonts.googleapis.com/css?family=Press+Start+2P';
+
+body {
+    background-image: url(background.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+nav {
+    color: white;
+    font-family: fantasy;
+    margin-bottom: 115px;
+}
+
+
+.main {
+    margin-left: 40%;
+    margin-top: 2em;
+    color: whitesmoke;
+    display: flex;
+    width: 400px;
+    height: 600px;
+    align-items: center;
+    flex-direction: column;
+    border: 4px solid padding, 10px;
+    font-family: fantasy;
+}
+
+.num2,
+.num1 {
+    padding: 10%;
+}
+
+
+.option {
+    width: 200px;
+    border-radius: 15px;
+    border: 4px solid black;
+    background-color: transparent;
+    color: white;
+    margin-bottom: 10px;
+    font-family: fantasy;
+    margin-left: 20%;
+
+}
+
+.start {
+    font-family: fantasy;
+    margin-left: 50%;
+    width: 200px;
+    height: 200px;
+    border-radius: 15px;
+}
+
 /* Rony: HP bar style */
 progress {
     -webkit-appearance: none;
@@ -8,7 +62,7 @@ progress {
 }
 
 progress[value]::-webkit-progress-bar {
-    background-color:rgb(253, 236, 236);
+    background-color: rgb(253, 236, 236);
     border-radius: 2px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset;
-  }
+}
