@@ -10,40 +10,23 @@
     <title>HT</title>
 </head>
 <body>
-    <!-- <header class="head">
-        <span id="score"></span>
-        <div id="hearts">
-
-        </div>
-    </header> -->
-    <!-- <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container-fluid">
-            <a id="myscore">SCORE:</a><span id="score">0</span>
-            <div class="" id="navbarText">
-                <span class="navbar-text">
-                    <progress id="health" value="3" max="3"></progress>
-                </span>
-                <div id="timer" class="timer">TIME: <span>60</span></div>
-            </div>
-        </div>
-    </nav> -->
+    <!-- navbar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
             <a id="myscore">SCORE : </a><span id="score"> 0</span>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <div id="timer" class="timer">TIME: <span>60</span></div>
-                </li>
-            </ul>
-          </div>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <div id="timer" class="timer">TIME: <span>60</span></div>
+                    </li>
+                </ul>
+            </div>
         </div>
         <span class="navbar-text">
             <progress id="health" value="3" max="3"></progress>
         </span>
     </nav>
     <div id="myModal" class="modal">
-        <!-- Modal content -->
         <div class="modal-content">
             <div class="modal-header">
                 <span class="close">&times;</span>
@@ -67,18 +50,21 @@
         <button class="start">Start</button>
     </div>
     <div class="main">
+        <!-- <div class=num1>  Flexbox1 -->
         <span class="clock"></span>
         <div class="question">
-           From what movie is that line?
+           <h1>From what movie is that line?</h1>
         </div>
         <div class="audioFile">
             
         </div>
+        <!-- </div> Closing flexbox1 -->
+        <!-- <div class="num2"> flexbox2-->
         <div class="options">           
-            <button type="button" class="btn btn-warning option" id="one"></button>
-            <button class="option" id="two"></button>
-            <button class="option" id="three"></button>
-            <button class="option" id="four"></button>
+            <button type="button" class="btn btn-warning option" id="one"></button> <!--Shimon has type="button" in all buttons-->
+            <button class="option" id="two"></button> <!--Shimon has type="button" in all buttons-->
+            <button class="option" id="three"></button> <!--Shimon has type="button" in all buttons-->
+            <button class="option" id="four"></button> <!--Shimon has type="button" in all buttons-->
         </div>
         <div class="rightWrong">
 
@@ -86,10 +72,8 @@
         <div class="popup" onclick="myFunction()">Click me for a hint!
             <span class="popuptext" id="myPopup"></span>
         </div>
+    <!-- </div> closing flexbox2 -->
     </div>
-    <footer class="foot">
-
-    </footer>
     <script src="myHT.js"></script>
 </body>
 </html>
