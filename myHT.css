@@ -2,38 +2,35 @@
 body {
     background-image: url(background.jpg);
     background-repeat: no-repeat;
-    background-size: 100%;
+    background-size: cover;
+    background-position: center;
     color: cornsilk;
+    background-color: rgb(75, 24, 24);
 }
-nav {
+header{
+    background-color: rgb(5, 5, 5);
     font-family: fantasy;
-    font-size: xx-large;
-    display: flex;
-    flex-wrap: wrap;
+    font-size: 25px;
 }
 /* Rony: HP bar style */
 progress {
     -webkit-appearance: none;
     appearance: none;
-    border: 2px solid black;
-    border-radius: 15px;
+    border: 2px solid cornsilk;
+    border-radius: 2px;
     width: 250px;
-    margin-right: 20px;
 }
 progress[value]::-webkit-progress-bar {
     background-color: rgb(253, 236, 236);
     border-radius: 2px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset;
 }
-li{
-    margin-left: 100px;
-}
 .all {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-top: 50px;
+    margin-top: 40px;
 }
 .start {
     display: flex;
@@ -60,13 +57,21 @@ li{
     flex-direction:column ;
     align-items: center;
     justify-content: space-between;
-    margin-bottom: 35px;
-}
-.question{
-    margin-bottom: 15px;
+    margin-bottom: 10px;
 }
 .popup{
-    margin-bottom: 20px;
+    margin-bottom: 10px;
+}
+.rightWrong{
+    background-color: #f7b500ab;
+    border: 2px solid rgb(27, 27, 27);
+    width: 150px;
+    height: 50px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .num2 {
     display: flex;
@@ -84,14 +89,8 @@ li{
     border: 2px solid rgb(58, 12, 12);
     margin-bottom: 8px;
     font-family: fantasy;
-    font-size: 20px;
-    height: 50px;
-}
-.rightWrong{
-    background-color: grey;
-    border: 3px solid black;
-    width: 300px;
-    height: 50px;
+    font-size: 15px;
+    height: 45px;
 }
 /* Popup container - can be anything you want */
 .popup {
@@ -144,12 +143,3 @@ li{
   from {opacity: 0;}
   to {opacity:1 ;}
 }
-/* .modal-content{
-background-color: #212529;
-}
-.modal-body, form{
-background-color: orange
-} */
-/* h3 {
-    align-self: center;
-} */

@@ -19,6 +19,7 @@ let timeLeft = 60;
 let round = 0;
 let score = 0;
 let index = 0;
+
 main.style.opacity = 0;
 //setting questions,audios,options,answers,hints
 let questions = [
@@ -26,7 +27,7 @@ let questions = [
         sound: "Q1.mp3",
         option1: "Scarface",
         option2: "Say Hello",
-        option3: "Bad Freind",
+        option3: "Bad Friend",
         option4: "Pretty Little Liars",
         answer: "Scarface",
         hint: "I'm Tony Montana"
@@ -68,7 +69,9 @@ let questions = [
         hint: "007"
     }
 ];
+
 let keys = Object.keys(questions[0]);
+
 function appendAudio(link){
     //adding link of audio
     let created_source = document.createElement("source");
@@ -86,32 +89,48 @@ function appendAudio(link){
         audio_place.replaceChild(created_audio,audio_place.children[0]);
     }
 }
+
 function popAnswer(){
     //toggling the correct or mistake for user
     rightWrong.classList.toggle("show");
     //clearing the display
     setTimeout(function(){
         rightWrong.innerHTML='';
-        rightWrong.style.backgroundColor = 'grey';
-    },2000);
+        rightWrong.style.backgroundColor = '#f7b500ab';
+    },1500);
 }
 Array.from(answers_place).forEach((ap) => {
     //adding event listener to each option
     ap.addEventListener('click',function(){
+        ap.style.backgroundColor = 'rgba(97, 97, 97, 0.726)';
+        ap.style.color = 'cornsilk';
+        ap.style.border = '2px solid rgb(27, 27, 27)';
+        ap.style.boxShadow = 'none';
+        ap.addEventListener('mouseover',function(e){
+           e.target.style.border = 'none';
+           e.target.style.color = 'black';
+           ap.style.backgroundColor = '#FFC107';
+        });
+        ap.addEventListener('mouseout',function(e){
+            e.target.style.backgroundColor = 'rgba(97, 97, 97, 0.726)';
+            e.target.style.color = 'cornsilk';
+            e.target.style.border = '2px solid rgb(27, 27, 27)';
+            e.target.style.boxShadow = 'none';
+         });
         if(round<questions.length){
             //If correct
             if(ap.innerHTML == questions[index-1].answer){
                 score += 100;
                 score_place.innerHTML = score;
-                rightWrong.innerHTML = "Correct";
-                rightWrong.style.backgroundColor = 'Green'
+                rightWrong.innerHTML = "Applause!";
+                rightWrong.style.backgroundColor = "rgb(106, 226, 41,0.7)";
                 popAnswer();
                 // if Wrong
             } else {
-                rightWrong.innerHTML = "False";
+                rightWrong.innerHTML = "Rotten Tomatoes";
                 popAnswer();
                 health.value -= 1;
-                rightWrong.style.backgroundColor = 'red'
+                rightWrong.style.backgroundColor = 'rgb(188, 54, 0, 0.7)';
                 if(health.value == 0){
                     gameOver(score);
                 }
@@ -122,6 +141,7 @@ Array.from(answers_place).forEach((ap) => {
         nextquestion();
     })
 })
+
 function nextquestion(){   
     let qst = questions[index];
     if(index < questions.length-1){
@@ -137,6 +157,7 @@ function nextquestion(){
     //counting rounds for appendAudio function
     round +=1;
 }
+                
 // Remove Start button
 start.addEventListener('click',function(){
     start_game.removeChild(start_game.children[0]);
@@ -146,7 +167,9 @@ start.addEventListener('click',function(){
     //setting new question
     nextquestion();
 })
+                   
 function gameOver(s){
+    main.style.opacity = 0;
     //pushing the end popup window
     modal.style.display = "block";
     span.onclick = function () {
@@ -158,8 +181,8 @@ function gameOver(s){
             modal.style.display = "none";
         }
     }
-    main.style.opacity = 0;
 }
+
 //setting countdown
 function countDown() {
     setInterval(function () {
@@ -172,6 +195,7 @@ function countDown() {
     }, 1100);
 }
 var popup = document.getElementById("myPopup");
+
 //giving hint
 function myFunction() {
     popup.classList.toggle("show");
