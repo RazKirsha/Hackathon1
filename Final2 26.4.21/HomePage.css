@@ -1,0 +1,202 @@
+@font-face {
+    font-family: 'godfather';
+    src: url('TheGodfather-v2.ttf');
+}
+  
+@font-face {
+  font-family: 'film';
+    src: url('ACFilmstrip.otf');
+}
+
+.DI {
+    color: cornsilk;
+}
+
+.navbar-brand {
+    font-family: godfather;
+    font-size: 35px;
+    color: cornsilk;
+}
+
+.active:hover {
+    -webkit-filter: grayscale(100%); /* Ch 23+, Saf 6.0+, BB 10.0+ */
+    filter: grayscale(100%); /* FF 35+ */
+}
+
+
+#film{
+    font-family: film;
+    font-size: 75px;
+    color: rgb(0, 0, 0);
+    -webkit-text-stroke: 0.0px;
+    
+}
+
+.mb-3 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 30px;
+    color: cornsilk;
+    -webkit-text-stroke: 0.2px rgb(10, 10, 10);    
+}
+
+.navandjum {
+    background-image:url('login-bg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-bottom: 5%;
+}
+
+.buttons{
+    display: flex;
+    justify-content: center;
+}
+
+.myBtn{
+    background-color: #0729795e;
+    color: cornsilk;
+    margin: 30px;
+    font-size: 25px;
+    border-radius: 6px;
+    transition: 0.3s;
+}
+
+.myBtn:hover {
+    -webkit-box-shadow:rgba(0,0,0,0.8) 0px 5px 15px, inset rgba(0,0,0,0.15) 0px -10px 20px;
+    -moz-box-shadow:rgba(0,0,0,0.8) 0px 5px 15px, inset rgba(0,0,0,0.15) 0px -10px 20px;
+    -o-box-shadow:rgba(0,0,0,0.8) 0px 5px 15px, inset rgba(0,0,0,0.15) 0px -10px 20px;
+    box-shadow:rgba(0,0,0,0.8) 0px 5px 15px, inset rgba(0,0,0,0.15) 0px -10px 20px;
+    background-color: #072979e3;
+}
+
+
+.popcorn{
+    display: flex;
+    padding: 20px;
+}
+
+circle#popcrncirlce {
+    fill: #FFE477;
+    transform-origin: 0 0;
+    -webkit-transform-origin: 0 0;
+    -webkit-animation: rotate 1.5s cubic-bezier(.49,.05,.32,1.04) infinite alternate;
+    animation: rotate 1.5s cubic-bezier(.49,.05,.32,1.04) infinite alternate; 
+}
+
+@-webkit-keyframes rotate {
+    50% {
+      -webkit-transform: translate(0px, 100px);
+    }
+}
+  
+@keyframes rotate {
+    50% {
+      transform: translate(0px, 100px);
+    }
+}
+
+.cards {
+    display: flex;
+    justify-content: center;
+    background-color: rgba(230, 149, 44, 0.1);
+}
+
+.card {
+    border: none;
+}
+
+.card-body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.name{
+    font-size: 60px;
+    margin-bottom: 25px;
+}
+
+@media screen and (max-width: 750px) {
+    .name {
+      font-size: 20px;
+    }
+}
+
+.iconi {
+    font-size: 200%;
+    margin-bottom: 20px;
+}
+
+.mam {
+    border: none;
+}
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0); /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+
+.modal-content {
+    position: relative;
+    background-color: rgb(254, 254, 254);
+    margin: auto;
+    padding: 0;
+    border: 1px solid #888;
+    width: 80%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s;
+    color: black;
+}
+
+/* Add Animation */
+@-webkit-keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+}
+
+@keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+}
+
+  /* The Close Button */
+.close {
+    color: white;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-header {
+    font-family: godfather;
+    padding: 2px 16px;
+    background-color: rgb(107, 103, 103);
+    color: white;
+}
+
+.modal-body {padding: 2px 16px;}
+.modal-footer {
+    font-family: godfather;
+    padding: 2px 16px;
+    background-color: rgb(107, 103, 103);
+    color: white;
+}
