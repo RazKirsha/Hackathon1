@@ -114,6 +114,12 @@ circle#popcrncirlce {
     margin-bottom: 25px;
 }
 
+@media screen and (max-width: 750px) {
+    .name {
+      font-size: 20px;
+    }
+}
+
 .iconi {
     font-size: 200%;
     margin-bottom: 20px;
