@@ -175,7 +175,8 @@ function gameOver(s){
     span.onclick = function () {
         modal.style.display = "none";
     }
-    modal_body.innerHTML = `You have got ${s} Point`;
+    modal_body.innerHTML = `Thanks For playing!
+    Your score is: ${s}`;
     window.onclick = function (event) {
         if (event.target == modal) {
             modal.style.display = "none";
@@ -201,7 +202,6 @@ function myFunction() {
     popup.classList.toggle("show");
     if (popup.style.display == 'none'){
         popup.style.display = 'block';
-        score -=30;
     }
     popup.innerHTML = questions[index-1].hint;
     //this is timer for pop up to disapper
